@@ -4,3 +4,4 @@ Pillow==4.3.0
 pytz==2017.3
 django-widget-tweaks==1.4.1
 flake8==3.5.0
+django-summernote==0.8.8.5

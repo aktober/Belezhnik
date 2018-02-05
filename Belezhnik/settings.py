@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.AccountsConfig',
     'notes.apps.NotesConfig',
     'core.apps.CoreConfig',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -135,5 +136,11 @@ EMAIL_PORT = 587
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+SUMMERNOTE_CONFIG = {
+    # Change editor size
+    'width': '100%',
+    'height': '280',
+}
 
 from .settings_local import *
