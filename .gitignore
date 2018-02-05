@@ -1,0 +1,5 @@
+.idea/
+Belezhnik_env/
+db.sqlite3
+*.pyc
+Belezhnik/settings_local.py

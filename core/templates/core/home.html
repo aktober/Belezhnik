@@ -1,0 +1,17 @@
+{% extends "core/core_base.html" %}
+
+{% block title %}
+    Belezhnik - Home
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        {% if user.is_authenticated %}
+            <h2>Welcome back, {{ user.username }}</h2>
+        {% else %}
+            <h2>Welcome</h2>
+            <h3>Please <a href="{% url 'users:login' %}">login</a> or <a href="{% url 'users:register' %}">register</a>
+                to start</h3>
+        {% endif %}
+    </div>
+{% endblock %}

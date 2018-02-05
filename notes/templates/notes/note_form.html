@@ -1,0 +1,28 @@
+{% extends 'notes/notes_base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Add note : {{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div id="notes-content-ajax">
+            <form method="post" action="">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="inputTitle">Title</label>
+                    {% render_field form.title class+="form-control" placeholder="Enter title" %}
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleTextarea">Text</label>
+                    {% render_field form.text rows="3" class+="form-control" placeholder="Enter note body" %}
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="Save"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}

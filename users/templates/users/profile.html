@@ -1,0 +1,32 @@
+{% extends 'users/users_base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Profile: Belezhnik
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Profile</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    {% if profile.picture %}
+                        <img class="img-responsive" src="{{ profile.picture.url }}" alt="Avatar">
+                    {% else %}
+                        <img width="150px" src="{% static 'users/img/no_avatar.jpg' %}" alt="Avatar">
+
+                    {% endif %}
+                </div>
+                <div class="col-md-9">
+                    <h4>First Name: {{ profile.user.first_name }}</h4>
+                    <h4>Username: {{ profile.user.username }}</h4>
+                    <h4>Email: {{ profile.user.email }}</h4>
+                    <h4>Bio: {{ profile.bio }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

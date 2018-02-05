@@ -1,0 +1,32 @@
+{% extends 'users/users_base.html' %}
+
+{% block title %}
+    Login: Belezhnik
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Please Login</h1>
+
+            <form method="post" action="{% url 'users:login' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input class="form-control" type="text" name="username" placeholder="Username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class="form-control" type="password" name="password">
+                </div>
+
+                <input class="btn btn-success" type="submit" name="" value="Login">
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

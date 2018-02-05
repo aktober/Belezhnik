@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include 'core/snippets/_styles.html' %}
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+{% include 'core/snippets/_menu.html' %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li id="message_{{ forloop.counter }}"
+                    {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                {{ message }}
+            </li>
+        {% endfor %} </ul>
+{% endif %}
+
+{#<main role="main" class="container">#}
+    {% block content %} {% endblock %}
+{#</main>#}
+
+{% include 'core/snippets/_scripts.html' %}
+</body>
+</html>
