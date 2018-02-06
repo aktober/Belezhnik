@@ -1,0 +1,35 @@
+{% extends 'users/users_base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    Register an account
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% if form.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        <div class="jumbotron">
+            <h1>Register</h1>
+
+            <form method="post" action="{% url 'users:register' %}">
+                {% csrf_token %}
+                {% for field in form.visible_fields %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field|add_class:'form-control' }}
+                        {% for error in field.errors %}
+                            <span class="help-block">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+                <input class="btn btn-success" type="submit" name="" value="Sign up">
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

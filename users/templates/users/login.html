@@ -8,7 +8,7 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1>Please Login</h1>
+            <h1>Login</h1>
 
             <form method="post" action="{% url 'users:login' %}">
                 {% csrf_token %}
@@ -22,7 +22,7 @@
                     <input class="form-control" type="password" name="password">
                 </div>
 
-                <input class="btn btn-success" type="submit" name="" value="Login">
+                <input class="btn btn-success" type="submit" name="" value="Sign in">
 
             </form>
 

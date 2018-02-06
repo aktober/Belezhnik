@@ -88,6 +88,7 @@ class ListNoteView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         queryset = super(ListNoteView, self).get_queryset()
+        print(self.request.user)
         author = get_object_or_404(UserProfile, user=self.request.user)
         return queryset.filter(author=author)
 

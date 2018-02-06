@@ -1,14 +1,13 @@
-from django.conf.urls import url
 from django.urls import path
 from users import views
 
 app_name = 'users'
 
 urlpatterns = [
-    path(r'login/', views.user_login, name='login'),
-    path(r'register/', views.user_register, name='register'),
-    path(r'logout/', views.logout_view, name='logout'),
-    path(r'activate/(?P<userid>[-\w]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
-        views.activate, name='activate'),
-    path(r'profile/', views.profile_view, name='profile'),
+    path(r'login/', views.LoginPage.as_view(), name='login'),
+    path(r'logout/', views.LogoutPage.as_view(), name='logout'),
+    path(r'profile/', views.ProfilePage.as_view(), name='profile'),
+    path(r'register/', views.RegisterPage.as_view(), name='register'),
+    path(r'activate/<int:pk>/<token>/', views.activate, name='activate'),
+    # todo: add reset password
 ]

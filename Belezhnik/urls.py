@@ -27,6 +27,4 @@ urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
 
     url(r'^summernote/', include('django_summernote.urls')),
-    # url(r'^accounts/login/$', views.user_login, name='login'),
-    #url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
 ]
